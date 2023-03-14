@@ -1100,6 +1100,16 @@ footer .flex.gap-32 ion-icon {
 	  width: 28px;
 	  height: 28px;
   }
+  .feature {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .container.image.feature {
+    order: 1;
+    margin-bottom: 1.5em;
+  }
 
 	.contact .flex.col.gap-16, .contact .flex.col.gap-16 .flex.row.gap-16 {
 		width: 100%;
