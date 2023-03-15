@@ -481,6 +481,12 @@ section.accent {
 	border: 1px solid var(--background-highest);
 	box-shadow: 0 3px 20px #000;
 }
+.container1 {
+	border-radius: 32px;
+	border: 1px solid var(--background-highest);
+	box-shadow: 0 3px 20px #000;
+
+}
 
 .container.bounce {
 	position: relative;
@@ -1100,6 +1106,13 @@ footer .flex.gap-32 ion-icon {
 	  width: 28px;
 	  height: 28px;
   }
+  .container1 {
+	max-width: 100%;
+	border-radius: 1px;
+	border: none;
+	box-shadow: none;
+
+}
   .feature {
     display: flex;
     flex-direction: column;
