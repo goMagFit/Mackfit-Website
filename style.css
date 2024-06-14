@@ -1,42 +1,20 @@
 :root {
-	--background-root: #81B0D1;
-	--background-root-gradient: linear-gradient(180deg, #0C0C0C 0%, #060606 100%);
-
-
-	--background-default: #E66A85;
-	--background-default-gradient: linear-gradient(180deg, #0C0C0C 0%, rgba(12, 12, 12, 0.32) 100%);
-
-		
-	--background-higher: #FFF9EE;
-	--background-higher-gradient: linear-gradient(172.68deg, #212121 5.69%, #121212 94.31%);
-
-
-	--background-highest: #FFF9EE;
-	/* --background-highest-gradient: linear-gradient(180deg, #282828 0%, rgba(40, 40, 40, 0.32) 100%); */
-
-	--foreground-default: #FFF9EE;
-	--foreground-dimmer: #120D0D;
-
-	--accent-primary: #81B0D1;
-	
-	--accent-secondary: #81B0D1;
-
-
+	--background-root: white;
 }
 
 @font-face {
   font-family: Switzer;
-  src: url(fonts/Switzer-Regular.ttf);
+  src: url(fonts/Inter-Regular.woff);
 }
 
 @font-face {
   font-family: Switzer Bold;
-  src: url(fonts/Switzer-Bold.ttf);
+  src: url(fonts/Inter-Bold.woff);
 }
 
 @font-face {
   font-family: Switzer Semi Bold;
-  src: url(fonts/Switzer-Semibold.ttf);
+  src: url(fonts/Inter-SemiBold.woff);
 }
 
 * {
@@ -51,9 +29,8 @@
 html, body {
   height: 100%;
   width: 100%;
-	color: var(--foreground-default);
+	color: black;
 	font-family: Switzer;
-	background: var(--background-root);
 	font-size: 18px;
 	overflow-x: hidden;
 	scroll-behavior: smooth;	
@@ -109,27 +86,14 @@ a:focus-visible {
 a.button, button {
 	border: none;
 	font-family: Switzer Semi Bold;
-	color: var(--foreground-default);
 	padding: 16px 32px;
-	background: var(--background-default);
-	transition: filter 0.3s ease-out, box-shadow 0.1s, transform 0.1s;
-	box-shadow: 0px 3px 8px 0px #00000040,  0px 0px 0px 0px #000000 inset;
 	border-radius: 16px;
-	font-size: 16px;
-	line-height: 150%;
+	font-size: 14px;
 	cursor: pointer;
 	font-weight: 500;
+	border: 1px solid #ccc;
 }
 
-a.button:hover, button:hover {
-	box-shadow: 0px 3px 16px 0px #00000040;
-	filter: brightness(120%);
-}
-
-a.button:active, button:active {
-	box-shadow:  0px 0px 0px 0px #00000040, 0px 0px 8px 0px #000000 inset;
-	transform: scale(0.98);
-}
 
 a.button.secondary, button.secondary {
 	background: var(--background-highest-gradient);
@@ -242,7 +206,7 @@ label
     width: 26px;
     left: 4px;
     bottom: 4px;
-    background-color: #81B0D1;
+    background-color: black;
     transition: 0.4s;
 }
 
@@ -264,6 +228,7 @@ input:checked + .slider::before
 .slider.round
 {
     border-radius: 34px;
+	border: 1px solid #ccc;
 }
 .slider.round::before
 {
@@ -404,7 +369,7 @@ nav {
 	width: calc(100% - 256px);
 	position: fixed;
 	z-index: 5;
-	box-shadow: 0 3px 32px #000;
+	border-bottom: 0.5px solid #ccc;
 }
 
 nav h4 {
@@ -477,15 +442,11 @@ section.accent {
 
 .container {
 	/* background: var(--background-higher-gradient); */
-	border-radius: 32px;
-	border: 1px solid var(--background-highest);
-	box-shadow: 0 3px 20px #000;
+	border-radius: 8px;
+	border: 1px solid #ccc;
 }
 .container1 {
-	border-radius: 32px;
-	border: 1px solid var(--background-highest);
-	box-shadow: 0 3px 20px #000;
-
+	border-radius: 8px;
 }
 
 .container.bounce {
@@ -504,37 +465,34 @@ section.accent {
 
 .container.accent {
 	background: var(--accent-primary-gradient);
-	box-shadow: 0px 3px 16px 0px #210E55;
 	border: 1px solid var(--accent-primary)
 }
 
 .container.accent.highest {
 	background: var(--accent-secondary-gradient);
-	box-shadow: 0px 3px 8px 0px #301A6A;
 	border: 1px solid var(--accent-primary)
 }
 
 .container.small {
 	border-radius: 16px;
-	box-shadow: 0px 3px 8px 0px #00000040;
 }
 
 .container.smallest {
 	width: 128px;
 	height: 128px;
 	border-radius: 16px;
-	box-shadow: 0px 3px 8px 0px #00000040;
 }
 
 .container.tiny {
 	width: 32px;
 	height: 32px;
 	border-radius: 6px;
-	box-shadow: 0px 3px 8px 0px #00000040;
 }
 
 .image {
 	flex-grow: 1;
+	object-fit: cover;
+
 }
 
 .section.landing {
@@ -543,10 +501,13 @@ section.accent {
 
 .image.landing {
 	height: 700px;
+	object-fit: cover;
 }
 
 .image.feature {
 	height: 560px;
+	width: 100%;
+	object-fit: cover;
 }
 
 .landing > div > div {
@@ -628,9 +589,10 @@ ion-icon {
 }
 
 footer {
-	background: var(--background-default);
-	border-top: 1px solid var(--background-highest);
+	border-top: 0.5px solid #ccc;
 	padding: 128px 10%;
+	color: white;
+	background-color: black;
 }
 
 footer a > div {
@@ -763,12 +725,11 @@ footer .flex.gap-32 ion-icon {
 
 .pricing-hero {
 	background: var(--accent-primary-gradient);
-	padding-bottom: 64px;
+	padding-bottom: 0px;
 }
 
 .toggle {
 	background: var(--accent-primary-gradient);
-	box-shadow: 0px 3px 16px 0px #210e55;
 	border: 1px solid var(--accent-primary);
 	border-radius: 16px;
 }
@@ -1055,12 +1016,7 @@ footer .flex.gap-32 ion-icon {
 		height: 45px;
 	}
 
-	.image.landing{
-		overflow: auto;
-		white-space: nowrap;
-		background: transparent;
-		height: 600px;
-	  }
+
 	  
 	nav {
 		padding: 16px 32px !important;
@@ -1137,28 +1093,4 @@ footer .flex.gap-32 ion-icon {
 	.get-started-body {
 		overflow: revert;
 	}
-}
-
-::selection {
-	background: var(--accent-primary);
-	color: var(--foreground-default);
-}
-
-::-webkit-scrollbar {
-  width: 13px;
-}
-
-::-webkit-scrollbar-track {
-	background: var(--background-default);
-}
-
-::-webkit-scrollbar-thumb {
-	background: var(--accent-primary-gradient);
-	border-radius: 20px;
-	transition: 0.3s;
-	box-shadow: 0px 3px 8px 0px #00000040, 0px 0px 0px 0px #000000 inset;
-}
-
-::-webkit-scrollbar-thumb:hover {
-	background: var(--accent-secondary-gradient);
 }
